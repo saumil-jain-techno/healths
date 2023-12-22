@@ -1,0 +1,255 @@
+openapi: 3.0.3
+info:
+  title: 'The SideProject API'
+  description: 'Start (and never finish) side projects with this API.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/healthcheck:
+    get:
+      summary: ''
+      operationId: getApiHealthcheck
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v2
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: up
+                  services:
+                    database: up
+                    redis: up
+                properties:
+                  status:
+                    type: string
+                    example: up
+                  services:
+                    type: object
+                    properties:
+                      database:
+                        type: string
+                        example: up
+                      redis:
+                        type: string
+                        example: up
+      tags:
+        - Endpoints
+      security: []
+  /api/users/index:
+    get:
+      summary: 'Listing of users.'
+      operationId: listingOfUsers
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v2
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Saumil Jain'
+                      email: saumil.jain@technostacks.com
+                      email_verified_at: null
+                      two_factor_secret: null
+                      two_factor_recovery_codes: null
+                      two_factor_confirmed_at: null
+                      created_at: null
+                      updated_at: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Saumil Jain'
+                        email: saumil.jain@technostacks.com
+                        email_verified_at: null
+                        two_factor_secret: null
+                        two_factor_recovery_codes: null
+                        two_factor_confirmed_at: null
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Saumil Jain'
+                        email:
+                          type: string
+                          example: saumil.jain@technostacks.com
+                        email_verified_at:
+                          type: string
+                          example: null
+                        two_factor_secret:
+                          type: string
+                          example: null
+                        two_factor_recovery_codes:
+                          type: string
+                          example: null
+                        two_factor_confirmed_at:
+                          type: string
+                          example: null
+                        created_at:
+                          type: string
+                          example: null
+                        updated_at:
+                          type: string
+                          example: null
+      tags:
+        - 'User management'
+  /api/users/store:
+    get:
+      summary: 'Store a user.'
+      operationId: storeAUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v2
+          schema:
+            type: string
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The name field is required. (and 2 more errors)'
+                  errors:
+                    name:
+                      - 'The name field is required.'
+                    email:
+                      - 'The email field is required.'
+                    password:
+                      - 'The password field is required.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The name field is required. (and 2 more errors)'
+                  errors:
+                    type: object
+                    properties:
+                      name:
+                        type: array
+                        example:
+                          - 'The name field is required.'
+                        items:
+                          type: string
+                      email:
+                        type: array
+                        example:
+                          - 'The email field is required.'
+                        items:
+                          type: string
+                      password:
+                        type: array
+                        example:
+                          - 'The password field is required.'
+                        items:
+                          type: string
+      tags:
+        - 'User management'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The id of the user.'
+                  example: Saumil
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: test@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: 'Saumil#Jain@123'
+                image:
+                  type: string
+                  format: binary
+                  description: 'The image.'
+              required:
+                - name
+                - email
+                - password
+  '/api/users/edit/{id}':
+    get:
+      summary: 'Edit a user.'
+      operationId: editAUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v2
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: null
+                properties:
+                  data:
+                    type: string
+                    example: null
+      tags:
+        - 'User management'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 14
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'User management'
+    description: 'APIs for managing users'

@@ -149,16 +149,14 @@ render(<<<'HTML'
 HTML);
 
 //Example for calculating EMI
-```php
-    $principalAmount = $this->ask('Enter Principal Amount:');
-    $interestRate = $this->ask('Enter Annual Interest Rate (%):');
-    $loanTenure = $this->ask('Enter Loan Tenure (in months):');
-    
-    $emi = $this->calculateEMI($principalAmount, $interestRate, $loanTenure);
-    $rows = [['EMI',$emi]];
-    $this->table(['Attribute', 'Value'], $rows);
-    
-    
-    return self::SUCCESS;
-```
+
+$principalAmount = $this->ask('Enter Principal Amount:');
+$interestRate = $this->ask('Enter Annual Interest Rate (%):');
+$loanTenure = $this->ask('Enter Loan Tenure (in months):');
+
+$emi = $this->calculateEMI($principalAmount, $interestRate, $loanTenure);
+$rows = [['EMI',$emi]];
+$this->table(['Attribute', 'Value'], $rows);
+
+return self::SUCCESS;
 

@@ -93,4 +93,21 @@ The following tools are required to start the installation.
    ./vendor/bin/pest
    ```
 
+## Writing Tests
+
+Imagine that your project features a global function called sum that adds two numbers together. To test this function, you would create a Tests\Unit\SumTest.php file with the following code.
+```
+it('return of addition of numbers',function(){
+    $sum = 5 + 2;
+    $user = $user = \App\Models\User::factory()->create();
+    $this->assertEquals($sum,6);
+    
+});
+```
+
+## Reference For Pest
+
+- [Pest PHP](https://pestphp.com/)
+- [Step by step to Pest PHP testing framework in Laravel 10 - DEV Community](https://dev.to/alphaolomi/step-by-step-to-pest-php-testing-framework-in-laravel-10-6e1)
+- [Video Resources | Pest - The elegant PHP Testing Framework](https://pestphp.com/docs/video-resources)
 

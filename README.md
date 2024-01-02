@@ -53,3 +53,8 @@ php artisan migrate
     ```
     http://127.0.0.1:8000/health
     ```
+
+## Reference
+
+- [Introduction | laravel-health | Spatie](https://spatie.be/docs/laravel-health/v1/introduction)
+- [GitHub - spatie/laravel-health: Check the health of your Laravel app](https://github.com/spatie/laravel-health)

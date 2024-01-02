@@ -34,7 +34,7 @@ php artisan migrate
   php artisan health:check
   ```
 
-  - Using Endpoints Running Check
+- Using Endpoints Running Check
     create a route for check health
     ```php
     <?php

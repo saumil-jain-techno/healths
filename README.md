@@ -96,7 +96,7 @@ The following tools are required to start the installation.
 ## Writing Tests
 
 Imagine that your project features a global function called sum that adds two numbers together. To test this function, you would create a Tests\Unit\SumTest.php file with the following code.
-```
+```php
 it('return of addition of numbers',function(){
     $sum = 5 + 2;
     $user = $user = \App\Models\User::factory()->create();

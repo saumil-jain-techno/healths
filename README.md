@@ -111,3 +111,23 @@ it('return of addition of numbers',function(){
 - [Step by step to Pest PHP testing framework in Laravel 10 - DEV Community](https://dev.to/alphaolomi/step-by-step-to-pest-php-testing-framework-in-laravel-10-6e1)
 - [Video Resources | Pest - The elegant PHP Testing Framework](https://pestphp.com/docs/video-resources)
 
+
+
+## Laravel Termwind CSS
+
+Termwind is a utility that shares similarities with Tailwind CSS but is specifically designed for PHP command-line applications. Its prime function is to facilitate developers to utilize the vast range of Tailwind CSS classes within their PHP code to enhance the visual output of the command line interface.
+
+Termwind empowers you to construct distinctive command-line applications by harnessing the capabilities of the Tailwind CSS API.
+
+By leveraging Tailwind CSS classes, developers can effortlessly improve the aesthetics and overall experience of their PHP applications, providing a more visually appealing and user-friendly interface.
+
+## Installation
+
+> **Requires [PHP 8.0+](https://php.net/releases/)**
+
+Require Termwind using [Composer](https://getcomposer.org):
+
+```bash
+composer require nunomaduro/termwind
+```
+

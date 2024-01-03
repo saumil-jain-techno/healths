@@ -159,7 +159,7 @@ $rows = [['EMI',$emi]];
 $this->table(['Attribute', 'Value'], $rows);
 
 return self::SUCCESS;
-
+```
 
 ## Laravel Scribe
 

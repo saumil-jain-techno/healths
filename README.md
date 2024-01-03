@@ -189,4 +189,29 @@ php artisan vendor:publish --tag=scribe-config
 - Pick a type in config/scribe.php
   - static: This generates a simple index.html file (plus CSS and JS assets) in your public/docs folder. The routing of this file does not pass through Laravel, so you can't add auth or any middleware.
   - laravel: Scribe will generate a Blade view served via your Laravel app, allowing you to add auth or any middleware to your docs.
+- Choose your routes
+  - The second thing you'll need to do is tell Scribe what routes you want to document (the routes key). By default, it looks similar to this: In Config/scribe.php
+- Do a test run
+  - Now, let's do a test run. Run the command to generate your docs.
+  ```
+  php artisan scribe:generate
+  ```
+- Visit your newly generated docs:
+  - If you're using static type, find the docs/index.html file in your public/ folder and open it in your browser.
+    ```
+    file:///var/www/html/health/public/docs/index.html
+    ```
+
+    - If you're using laravel type, start your app (php artisan serve), then visit /docs.
+    ```
+    http://127.0.0.1:8000/docs
+    ```
+
+
+## Reference For Scribe
+
+- [Introduction | Scribe](https://scribe.knuckles.wtf/laravel/)
+- [GitHub - knuckleswtf/TheSideProjectAPI: Demo API to demonstrate Scribe's capabilities](https://github.com/knuckleswtf/TheSideProjectAPI)
+- [Configuration — Scribe documentation](https://scribe.readthedocs.io/en/latest/config.html)
+- [Scribe documentation](https://scribe.readthedocs.io/en/latest/)
 

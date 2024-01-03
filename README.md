@@ -160,3 +160,25 @@ $this->table(['Attribute', 'Value'], $rows);
 
 return self::SUCCESS;
 
+
+## Laravel Scribe
+
+Scribe helps you generate API documentation for humans from your Laravel/Lumen/Dingo codebase.
+
+## Requirements
+The following tools are required to start the installation.
+
+- PHP 8.0+
+- [Composer](https://getcomposer.org/download/)
+
+##Installation
+
+First, add the package via Composer
+```
+composer require --dev knuckleswtf/scribe
+```
+
+Publish the config file by running
+```
+php artisan vendor:publish --tag=scribe-config
+```

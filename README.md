@@ -182,3 +182,11 @@ Publish the config file by running
 ```
 php artisan vendor:publish --tag=scribe-config
 ```
+
+
+## Run Scribe
+
+- Pick a type in config/scribe.php
+      - static: This generates a simple index.html file (plus CSS and JS assets) in your public/docs folder. The routing of this file does not pass through Laravel, so you can't add auth or any middleware.
+      - laravel: Scribe will generate a Blade view served via your Laravel app, allowing you to add auth or any middleware to your docs.
+

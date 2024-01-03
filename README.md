@@ -171,7 +171,7 @@ The following tools are required to start the installation.
 - PHP 8.0+
 - [Composer](https://getcomposer.org/download/)
 
-##Installation
+## Installation
 
 First, add the package via Composer
 ```

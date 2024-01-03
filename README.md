@@ -202,7 +202,7 @@ php artisan vendor:publish --tag=scribe-config
     file:///var/www/html/health/public/docs/index.html
     ```
 
-    - If you're using laravel type, start your app (php artisan serve), then visit /docs.
+  - If you're using laravel type, start your app (php artisan serve), then visit /docs.
     ```
     http://127.0.0.1:8000/docs
     ```
